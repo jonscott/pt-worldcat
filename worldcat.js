@@ -63,7 +63,7 @@ var wclang="";
 var sdate1="";
 var sdate2="";
 var wcdate="";
-var summitscope="&scope=1";  //--- Scope to Summit Libraries on UW Instance --
+var summitscope="&scope=0";  //--- Scope to Libraries Worldwide --
 var IsStaff = document.getElementById('STAFF');  //--- Requires PUBLIC button have set ID --
 
 //========================== Get Library's Button Image =======================================
@@ -78,6 +78,8 @@ Summit_Img = "http://libsys.ewu.edu/screens/summit.gif"; }
 Summit_Img = "http://clark.up.edu/screens/searchsummit.gif"; }
     else if (str.indexOf("library.pcc.edu") > -1) {
 Summit_Img = "http://library.pcc.edu/screens/images/buttons/summit.gif"; }
+    else if (str.indexOf("oasis.library.oregonstate.edu") > -1) {
+Summit_Img = "http://oasis.library.oregonstate.edu/screens/orbpass.png"; }
     else if (str.indexOf("oasis.oregonstate.edu") > -1) {
 Summit_Img = "http://oasis.oregonstate.edu/screens/orbpass.png"; }
     else if (str.indexOf("janus.uoregon.edu") > -1) {
