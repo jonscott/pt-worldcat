@@ -132,6 +132,10 @@ Summit_Img = "http://oasis.oregonstate.edu/screens/orbpass.png"; }
  Summit_Img = "http://lis.wwu.edu/screens/summit_1.gif"; }
     else if (str.indexOf("library.whitman.edu") > -1) {
  Summit_Img = "http://library.whitman.edu/screens/orbpass.gif"; }
+    else if (str.indexOf("marian.law.washington.edu") > -1) {
+ Summit_Img = "http://marian.law.washington.edu/screens/summit.gif"; }
+    else if (str.indexOf("library.willamette.edu") > -1) {
+ Summit_Img = "http://library.willamette.edu/screens/orbis2.gif"; }
     else if (str.indexOf("catalog.willamette.edu") > -1) {
  Summit_Img = "http://catalog.willamette.edu/screens/orbis2.gif"; }
 else {
