@@ -80,6 +80,8 @@ Summit_Img = "http://clark.up.edu/screens/searchsummit.gif"; }
 Summit_Img = "http://library.pcc.edu/screens/images/buttons/summit.gif"; }
     else if (str.indexOf("oasis.library.oregonstate.edu") > -1) {
 Summit_Img = "http://oasis.library.oregonstate.edu/screens/orbpass.png"; }
+    else if (str.indexOf("oasis.orst.edu") > -1) {
+Summit_Img = "http://oasis.orst.edu/screens/orbpass.png"; }
     else if (str.indexOf("oasis.oregonstate.edu") > -1) {
 Summit_Img = "http://oasis.oregonstate.edu/screens/orbpass.png"; }
     else if (str.indexOf("janus.uoregon.edu") > -1) {
@@ -1142,4 +1144,4 @@ if ((((d1) || (d2)) && (wclimit)) && (!wclang) || (((str.indexOf("&Da=") > -1 ||
     }  
   }
 }
-document.write ("<a href='javascript:readit2();'> <img src='" + Summit_Img + "' border=0 id=SummitBtn></a>");
+document.write ("<a href='javascript:readit2();'><img src='" + Summit_Img + "' border=0 id=SummitBtn></a>");
