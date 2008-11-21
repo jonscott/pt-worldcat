@@ -1167,7 +1167,7 @@ if ((((d1) || (d2)) && (wclimit)) && (!wclang) || (((str.indexOf("&Da=") > -1 ||
   }
 }
 	if (str.indexOf("library.seattleu.edu") > -1) {		//-- Seattle U does not use an image.
-		document.write ("<a href='javascript:readit2();'>Repeat Search in Summit</a>") }
+		document.write ("<a href='javascript:readit2();'><span class='summitButton'>Repeat Search in Summit<img src='http://www.seattleu.edu/lemlib/resources/images/summit-favicon.gif' alt=''></a>") }
     else  {		
 document.write ("<a href='javascript:readit2();'><img src='" + Summit_Img + "' border=0 id=SummitBtn></a>");
 }
