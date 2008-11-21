@@ -63,6 +63,7 @@ var wclang="";
 var sdate1="";
 var sdate2="";
 var wcdate="";
+var LCnopass="";
 var summitscope="&scope=0";  //--- Scope to Libraries Worldwide --
 var IsStaff = document.getElementById('STAFF');  //--- Requires PUBLIC button have set ID --
 
@@ -760,13 +761,15 @@ function readit2()  {
             	wcindex="ti%3A"; }
 	   else if (sfindex == "a") {
            	wcindex="au%3A"; }
-	   else if (sfindex == "d") {
+	   else if ((sfindex == "d") || (sfindex == "g"))  {
            	wcindex="su%3A"; }
 	   else if (sfindex == "s") {      //--- Series Title Index ---
            	wcindex="ti%3A" 
                 wclimit="&fq=dt%3Aser"; }
 	   else if (sfindex == "i") {
            	wcindex= ( /^[\d]{4}-?[\dxX]{4}$/.test(sqf) ? "issn%3A" : "isbn%3A"); }
+	   else if (sfindex == "c") {
+           	LCnopass="nopass"; }
 	   else  {
                 wcindex="";  }
 
@@ -965,6 +968,9 @@ if ((((d1) || (d2)) && (wclimit)) && (!wclang) || (((str.indexOf("&Da=") > -1 ||
     		{
 		BibRecord2();
            }
+        else if (LCnopass) {
+             alert("Worldcat does not support LC or local number searching.  Try another type of search");
+               }
    else    {
   	                    location.href= (url + wcindex + sfarg + wclimit + wcdate + summitscope);
    		      } 
@@ -1059,6 +1065,9 @@ if ((((d1) || (d2)) && (wclimit)) && (!wclang) || (((str.indexOf("&Da=") > -1 ||
     		{
 		BibRecord2();
            }
+        else if (LCnopass) {
+             alert("Worldcat does not support LC or local number searching.  Try another type of search");
+               }
    else    {
   	                    location.href= (url + wcindex + sfarg + wclang + wclimit + wcdate + summitscope);
                      }
@@ -1115,6 +1124,9 @@ if ((((d1) || (d2)) && (wclimit)) && (!wclang) || (((str.indexOf("&Da=") > -1 ||
     		{
 		BibRecord2();
            }
+        else if (LCnopass) {
+             alert("Worldcat does not support LC or local number searching.  Try another type of search")
+               }
    else    {
   	                    location.href= (url + wcindex + sfarg + wclang + wclimit + wcdate + summitscope);
                          }
@@ -1129,6 +1141,9 @@ if ((((d1) || (d2)) && (wclimit)) && (!wclang) || (((str.indexOf("&Da=") > -1 ||
     		{
 		  BibRecord2();
                    }
+        else if (LCnopass) {
+             alert("Worldcat does not support LC or local number searching.  Try another type of search");
+               }
                 else  { 
         		location.href= (url + wcindex + sfarg + wclimit + summitscope);
                }
@@ -1143,9 +1158,16 @@ if ((((d1) || (d2)) && (wclimit)) && (!wclang) || (((str.indexOf("&Da=") > -1 ||
     		{
 		BibRecord2();
            }
+        else if (LCnopass) {
+             alert("Worldcat does not support LC or local number searching.  Try another type of search");
+               }
    else    {
                location.href= (url + wcqindex + sqf + wclimit + summitscope);  
     }  
   }
 }
+	if (str.indexOf("library.seattleu.edu") > -1) {		//-- Seattle U does not use an image.
+		document.write ("<a href='javascript:readit2();'>Repeat Search in Summit</a>") }
+    else  {		
 document.write ("<a href='javascript:readit2();'><img src='" + Summit_Img + "' border=0 id=SummitBtn></a>");
+}
