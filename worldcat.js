@@ -46,7 +46,7 @@
 //  |                      -- NOTES --	                         |
 //  |								 |
 //  |  Staff login detection relies on ID set for Public button  |
-//  |  - BUT_PUBLIC=/screens/marc_display.gif" id="MARC -        |
+//  |  - BUT_PUBLIC=/screens/public.gif" id="STAFF -             |
 //  |    (The III system will close the seemingly open tag.)	 ------------------------
 //  |                                                            			 |
 //  | Uses "custom_dialog.css" which must reside in the same directory as the script.    |
@@ -1167,7 +1167,7 @@ if ((((d1) || (d2)) && (wclimit)) && (!wclang) || (((str.indexOf("&Da=") > -1 ||
   }
 }
 	if (str.indexOf("library.seattleu.edu") > -1) {		//-- Seattle U does not use an image.
-		document.write ("<a href='javascript:readit2();'><span class='summitButton'>Repeat Search in Summit<img src='http://www.seattleu.edu/lemlib/resources/images/summit-favicon.gif' alt=''></a>") }
+		document.write ("<a href='javascript:readit2();' id='suSummitbtn'>Repeat Search in Summit</a>") }
     else  {		
 document.write ("<a href='javascript:readit2();'><img src='" + Summit_Img + "' border=0 id=SummitBtn></a>");
 }
