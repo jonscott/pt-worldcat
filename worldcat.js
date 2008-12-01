@@ -749,7 +749,7 @@ function readit2()  {
 	sfarg = transmogrify(sfarg);
      }
 
-	sfarg = sfarg.replace(/ & /g," and ");
+	sfarg = sfarg.replace(/ ?& ?/g," and ");
 
 	if (!sfindex) {
            if (document.searchtool) {
