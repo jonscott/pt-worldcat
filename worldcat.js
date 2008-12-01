@@ -611,6 +611,7 @@ function replace(string,title,by) {
     title = replace(title,unescape('%FD'),'y');
     title = replace(title,unescape('%FE'),'p');
     title = replace(title,unescape('%FF'),'y');
+    title = replace(title,unescape('&amp;'),'and');
 
             	if (title.length > 252) {  		 //--- Title is longer than WC will accept ---
 		   title = (title.substr(0,252));  	 //---Truncate for WC Limit --
