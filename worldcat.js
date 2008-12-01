@@ -70,7 +70,7 @@ var IsStaff = document.getElementById('STAFF');  //--- Requires PUBLIC button ha
 //========================== Get Library's Button Image =======================================
 var Summit_Img ="";
     if (str.indexOf("griffin.wsu.edu") > -1) {
-Summit_Img = "http://www.wsulibs.wsu.edu/Test/OrcaBTN2.gif"; }
+Summit_Img = "http://griffin.wsu.edu/screens/OrcaBTN.gif"; }
     else if (str.indexOf("library.wou.edu") > -1) {
 Summit_Img = "http://library.wou.edu/screens/orbiss.gif"; }
     else if (str.indexOf("libsys.ewu.edu") > -1) {
