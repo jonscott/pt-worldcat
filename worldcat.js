@@ -634,6 +634,7 @@ if (str.indexOf("search/") > -1)
         sqf = sqf.replace("&SORT=D","");
         sqf = sqf.replace("&SORT=","");
 //	sqf = sqf.replace("+", " ");
+	sqf = sqf.replace("+%26+", "+and+");
            var s3 = str.indexOf("search/");
            var sqi = str.substring(s3,s1);
 	   var sqindex = sqi.replace("?","");
@@ -664,6 +665,7 @@ if (str.indexOf("searcharg=") > -1)
         sqf = sqf.replace("&SORT=D","");
         sqf = sqf.replace("&SORT=","");
 //	sqf = sqf.replace("+", " ");
+	sqf = sqf.replace("+%26+", "+and+");
            var s3 = str.indexOf("searchtype=");
            var sqi = str.substring(s3,s1);
 	   var sqindex = sqi.replace("searchtype=","");
@@ -746,6 +748,8 @@ function readit2()  {
      if (/^[adtN]:/.test(sfarg) || / [adtN]:/.test(sfarg) || /\) and \(/.test(sfarg)) { //--- advanced keyword search limits selected ? ---
 	sfarg = transmogrify(sfarg);
      }
+
+	sfarg = sfarg.replace(/ & /g," and ");
 
 	if (!sfindex) {
            if (document.searchtool) {
