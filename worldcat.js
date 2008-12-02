@@ -139,6 +139,8 @@ Summit_Img = "http://oasis.oregonstate.edu/screens/orbpass.png"; }
  Summit_Img = "http://library.willamette.edu/screens/orbis2.gif"; }
     else if (str.indexOf("catalog.willamette.edu") > -1) {
  Summit_Img = "http://catalog.willamette.edu/screens/orbis2.gif"; }
+    else if (str.indexOf("dewey.wallawalla.edu") > -1) {
+ Summit_Img = "http://dewey.wallawalla.edu/screens/summit.gif"; }
 else {
 Summit_Img = "http://griffin.wsu.edu/screens/OrcaBTN.gif"; }
 
