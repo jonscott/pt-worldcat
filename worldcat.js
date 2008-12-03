@@ -121,8 +121,6 @@ Summit_Img = "http://oasis.oregonstate.edu/screens/orbpass.png"; }
  Summit_Img = "http://cals.evergreen.edu/screens/repinsum.gif"; }
     else if (str.indexOf("deborah.spu.edu") > -1) {
  Summit_Img = "http://deborah.spu.edu/screens/search_summit.gif"; }
-//--    else if (str.indexOf("library.seattleu.edu") > -1) {		--- Need to work this out.
-//-- Summit_Img = "http://library.seattleu.edu/screens/search_summit.gif"; }
     else if (str.indexOf("lib.sou.edu") > -1) {
  Summit_Img = "http://lib.sou.edu/screens/searchsummit.jpg"; }
     else if (str.indexOf("simon.ups.edu") > -1) {
@@ -178,7 +176,7 @@ function BibRecord2()  {	//----------- If we are in a bib.record details page --
 	var v_css  = document.createElement('link');
 	v_css.rel = 'stylesheet'
 	v_css.type = 'text/css';
-	v_css.href = "http://www.wsulibs.wsu.edu/test/custom_dialog.css";
+	v_css.href = "http://allianceharvest.uoregon.edu/pt/custom_dialog.css";
 	document.getElementsByTagName('head')[0].appendChild(v_css);
 
 function getEventTarget(event)
@@ -636,7 +634,7 @@ if (str.indexOf("search/") > -1)
         sqf = sqf.replace("&SORT=D","");
         sqf = sqf.replace("&SORT=","");
 //	sqf = sqf.replace("+", " ");
-	sqf = sqf.replace("+%26+", "+and+");
+	sqf = sqf.replace("+%26+", "+and+");   //-- Squash Ampersands --
            var s3 = str.indexOf("search/");
            var sqi = str.substring(s3,s1);
 	   var sqindex = sqi.replace("?","");
@@ -667,7 +665,7 @@ if (str.indexOf("searcharg=") > -1)
         sqf = sqf.replace("&SORT=D","");
         sqf = sqf.replace("&SORT=","");
 //	sqf = sqf.replace("+", " ");
-	sqf = sqf.replace("+%26+", "+and+");
+	sqf = sqf.replace("+%26+", "+and+");    //-- Squash Ampersands --
            var s3 = str.indexOf("searchtype=");
            var sqi = str.substring(s3,s1);
 	   var sqindex = sqi.replace("searchtype=","");
@@ -751,7 +749,7 @@ function readit2()  {
 	sfarg = transmogrify(sfarg);
      }
 
-	sfarg = sfarg.replace(/ ?& ?/g," and ");
+	sfarg = sfarg.replace(/ ?& ?/g," and ");  //-- Squash Ampersands --
 
 	if (!sfindex) {
            if (document.searchtool) {
