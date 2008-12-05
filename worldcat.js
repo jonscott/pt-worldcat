@@ -518,6 +518,7 @@ initDialog();
       		if (x.length == 2 && (x[0].innerHTML.toLowerCase() == "title" || x[0].innerHTML.toLowerCase() == "title:")) {   // if the row has 2 columns and the 1st one has the text Title
 		var myNextcel = x[1];
         	title = x[1].innerHTML.replace(/(<([^>]+)>)/ig,""); // strip out all of the HTML 
+        	title = title.replace(/\/ +?[bB][yY] +?/ig,""); // strip out " / by " as proof of concept 
 	      }
 	    }
 	//----------- check to see if ie || mozilla href text element exists first -----------------
