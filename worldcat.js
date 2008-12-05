@@ -706,13 +706,14 @@ function readit2()  {
 
 	//========================== Find search term if we are in a "No Hits" screen =============================
  			
-			var sp = document.getElementsByTagName('span');	     
+			var sp = document.getElementsByTagName('h2');	     
     			for(i = 0; i < sp.length; i++) {
-      			if (((sp[i].getAttribute("class") == "errormessage") || (sp[i].className.indexOf("errormessage") > -1)) && (document.search)) {   
+			var err = sp[i].innerHTML.replace(/(<([^>]+)>)/ig,"");
+      			if ((err.toLowerCase().indexOf("no entries found") > -1) && (document.search)) {   
 			var nohits = "No Hits";	
 			var sfarg = document.search.searchText1.value			   		      
 	      		  }
-      			if (((sp[i].getAttribute("class") == "errormessage") || (sp[i].className.indexOf("errormessage") > -1)) && (!document.search)) { 
+      			if ((err.toLowerCase().indexOf("no entries found") > -1) && (!document.search)) { 
 			var stxt = document.getElementsByName("SEARCH");
 			var nohits = "No Hits";	
 			var sfarg = stxt[0].value;			   		      
