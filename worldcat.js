@@ -67,80 +67,85 @@ var LCnopass="";
 var summitscope="&scope=0";  //--- Scope to Libraries Worldwide --
 var IsStaff = document.getElementById('STAFF');  //--- Requires PUBLIC button have set ID --
 
+//----------------- Check for SSL and set protocol accordingly --------------------  
+	if (str.indexOf("https:") > -1) {
+		var Protoc="https://" ; 
+	  } else {
+ 	var Protoc="http://"; }
 //========================== Get Library's Button Image =======================================
 var Summit_Img ="";
     if (str.indexOf("griffin.wsu.edu") > -1) {
-Summit_Img = "http://griffin.wsu.edu/screens/OrcaBTN.gif"; }
+Summit_Img = "griffin.wsu.edu/screens/OrcaBTN.gif"; }
     else if (str.indexOf("library.wou.edu") > -1) {
-Summit_Img = "http://library.wou.edu/screens/orbiss.gif"; }
+Summit_Img = "library.wou.edu/screens/orbiss.gif"; }
     else if (str.indexOf("libsys.ewu.edu") > -1) {
-Summit_Img = "http://libsys.ewu.edu/screens/summit.gif"; }
+Summit_Img = "libsys.ewu.edu/screens/summit.gif"; }
     else if (str.indexOf("clark.up.edu") > -1) {
-Summit_Img = "http://clark.up.edu/screens/searchsummit.gif"; }
+Summit_Img = "clark.up.edu/screens/searchsummit.gif"; }
     else if (str.indexOf("library.pcc.edu") > -1) {
-Summit_Img = "http://library.pcc.edu/screens/images/buttons/summit.gif"; }
+Summit_Img = "library.pcc.edu/screens/images/buttons/summit.gif"; }
     else if (str.indexOf("oasis.library.oregonstate.edu") > -1) {
-Summit_Img = "http://oasis.library.oregonstate.edu/screens/orbpass.png"; }
+Summit_Img = "oasis.library.oregonstate.edu/screens/orbpass.png"; }
     else if (str.indexOf("oasis.orst.edu") > -1) {
-Summit_Img = "http://oasis.orst.edu/screens/orbpass.png"; }
+Summit_Img = "oasis.orst.edu/screens/orbpass.png"; }
     else if (str.indexOf("oasis.oregonstate.edu") > -1) {
-Summit_Img = "http://oasis.oregonstate.edu/screens/orbpass.png"; }
+Summit_Img = "oasis.oregonstate.edu/screens/orbpass.png"; }
     else if (str.indexOf("janus.uoregon.edu") > -1) {
- Summit_Img = "http://janus.uoregon.edu/screens/summit.png"; }
+ Summit_Img = "janus.uoregon.edu/screens/summit.png"; }
     else if (str.indexOf("library.linfield.edu") > -1) {
- Summit_Img = "http://library.linfield.edu/screens/summit.gif"; }
+ Summit_Img = "library.linfield.edu/screens/summit.gif"; }
     else if (str.indexOf("lrc-srv.mhcc.edu") > -1) {
- Summit_Img = "http://lrc-srv.mhcc.edu/screens/but_summit.gif"; }
+ Summit_Img = "lrc-srv.mhcc.edu/screens/but_summit.gif"; }
     else if (str.indexOf("library.cwu.edu") > -1) {
- Summit_Img = "http://library.cwu.edu/screens/summitsearch.gif"; }
+ Summit_Img = "library.cwu.edu/screens/summitsearch.gif"; }
     else if (str.indexOf("catalog.ccrls.org") > -1) {
- Summit_Img = "http://catalog.ccrls.org/screens/summitbutton.gif"; }
+ Summit_Img = "catalog.ccrls.org/screens/summitbutton.gif"; }
     else if (str.indexOf("oswald.clark.edu") > -1) {
- Summit_Img = "http://oswald.clark.edu/screens/summit.gif"; }
+ Summit_Img = "oswald.clark.edu/screens/summit.gif"; }
     else if (str.indexOf("eos.eou.edu") > -1) {
- Summit_Img = "http://eos.eou.edu/screens/images/graysummit.gif"; }
+ Summit_Img = "eos.eou.edu/screens/images/graysummit.gif"; }
     else if (str.indexOf("catalog.georgefox.edu") > -1) {
- Summit_Img = "http://catalog.georgefox.edu/screens/summit.gif"; }
+ Summit_Img = "catalog.georgefox.edu/screens/summit.gif"; }
     else if (str.indexOf("library.lanecc.edu") > -1) {
- Summit_Img = "http://library.lanecc.edu/screens/images/buttons/summit5.gif"; }
+ Summit_Img = "library.lanecc.edu/screens/images/buttons/summit5.gif"; }
     else if (str.indexOf("libcat.lclark.edu") > -1) {
- Summit_Img = "http://libcat.lclark.edu/screens/orbis1.gif"; }
+ Summit_Img = "libcat.lclark.edu/screens/orbis1.gif"; }
     else if (str.indexOf("shoen.iii.com") > -1) {
- Summit_Img = "http://shoen.iii.com/screens/orbis1.gif"; }
+ Summit_Img = "shoen.iii.com/screens/orbis1.gif"; }
     else if (str.indexOf("catalogs.ohsu.edu") > -1) {
- Summit_Img = "http://catalogs.ohsu.edu/screens/orbis.gif"; }
+ Summit_Img = "catalogs.ohsu.edu/screens/orbis.gif"; }
     else if ((str.indexOf("140.211.132.11") > -1) ||  (str.indexOf("hedgehog.oit.edu")) > -1) {
- Summit_Img = "http://140.211.132.11/screens/orbis2.gif"; }
+ Summit_Img = "140.211.132.11/screens/orbis2.gif"; }
     else if (str.indexOf("abigail.lib.pacificu.edu") > -1) {
- Summit_Img = "http://abigail.lib.pacificu.edu/screens/summit.gif"; }
+ Summit_Img = "abigail.lib.pacificu.edu/screens/summit.gif"; }
     else if (str.indexOf("vikat.pdx.edu") > -1) {
- Summit_Img = "http://vikat.pdx.edu/screens/orbislook.gif"; }
+ Summit_Img = "vikat.pdx.edu/screens/orbislook.gif"; }
     else if (str.indexOf("library-catalog.reed.edu") > -1) {
- Summit_Img = "http://library-catalog.reed.edu/screens/searchsum.gif"; }
+ Summit_Img = "library-catalog.reed.edu/screens/searchsum.gif"; }
     else if (str.indexOf("cals.evergreen.edu") > -1) {
- Summit_Img = "http://cals.evergreen.edu/screens/repinsum.gif"; }
+ Summit_Img = "cals.evergreen.edu/screens/repinsum.gif"; }
     else if (str.indexOf("deborah.spu.edu") > -1) {
- Summit_Img = "http://deborah.spu.edu/screens/search_summit.gif"; }
+ Summit_Img = "deborah.spu.edu/screens/search_summit.gif"; }
     else if (str.indexOf("lib.sou.edu") > -1) {
- Summit_Img = "http://lib.sou.edu/screens/searchsummit.jpg"; }
+ Summit_Img = "lib.sou.edu/screens/searchsummit.jpg"; }
     else if (str.indexOf("simon.ups.edu") > -1) {
- Summit_Img = "http://simon.ups.edu/screens/summit.gif"; }
+ Summit_Img = "simon.ups.edu/screens/summit.gif"; }
     else if (str.indexOf("catalog.lib.washington.edu") > -1) {
- Summit_Img = "http://catalog.lib.washington.edu/screens/repincas.gif"; }
+ Summit_Img = "catalog.lib.washington.edu/screens/repincas.gif"; }
     else if (str.indexOf("lis.wwu.edu") > -1) {
- Summit_Img = "http://lis.wwu.edu/screens/summit_1.gif"; }
+ Summit_Img = "lis.wwu.edu/screens/summit_1.gif"; }
     else if (str.indexOf("library.whitman.edu") > -1) {
- Summit_Img = "http://library.whitman.edu/screens/orbpass.gif"; }
+ Summit_Img = "library.whitman.edu/screens/orbpass.gif"; }
     else if (str.indexOf("marian.law.washington.edu") > -1) {
- Summit_Img = "http://marian.law.washington.edu/screens/summit.gif"; }
+ Summit_Img = "marian.law.washington.edu/screens/summit.gif"; }
     else if (str.indexOf("library.willamette.edu") > -1) {
- Summit_Img = "http://library.willamette.edu/screens/orbis2.gif"; }
+ Summit_Img = "library.willamette.edu/screens/orbis2.gif"; }
     else if (str.indexOf("catalog.willamette.edu") > -1) {
- Summit_Img = "http://catalog.willamette.edu/screens/orbis2.gif"; }
+ Summit_Img = "catalog.willamette.edu/screens/orbis2.gif"; }
     else if (str.indexOf("dewey.wallawalla.edu") > -1) {
- Summit_Img = "http://dewey.wallawalla.edu/screens/summit.gif"; }
+ Summit_Img = "dewey.wallawalla.edu/screens/summit.gif"; }
 else {
-Summit_Img = "http://griffin.wsu.edu/screens/OrcaBTN.gif"; }
+Summit_Img = "griffin.wsu.edu/screens/OrcaBTN.gif"; }
 
 //========================== transmogrify Function ==================================================================
 
@@ -518,7 +523,7 @@ initDialog();
       		if (x.length == 2 && (x[0].innerHTML.toLowerCase() == "title" || x[0].innerHTML.toLowerCase() == "title:")) {   // if the row has 2 columns and the 1st one has the text Title
 		var myNextcel = x[1];
         	title = x[1].innerHTML.replace(/(<([^>]+)>)/ig,""); // strip out all of the HTML 
-        	title = title.replace(/\/ +?[bB][yY] +?/ig,""); // strip out " / by " as proof of concept 
+        	title = title.replace(/\/ +?[bB][yY] +?/ig,"");     // strip out " / by " and leave author name only
 	      }
 	    }
 	//----------- check to see if ie || mozilla href text element exists first -----------------
@@ -1176,5 +1181,5 @@ if ((((d1) || (d2)) && (wclimit)) && (!wclang) || (((str.indexOf("&Da=") > -1 ||
 	if (str.indexOf("library.seattleu.edu") > -1) {		//-- Seattle U does not use an image.
 		document.write ("<a href='javascript:readit2();' id='suSummitbtn'>Repeat Search in Summit</a>") }
     else  {		
-document.write ("<a href='javascript:readit2();'><img src='" + Summit_Img + "' border=0 id=SummitBtn></a>");
+document.write ("<a href='javascript:readit2();'><img src='" + Protoc + Summit_Img + "' border=0 id=SummitBtn></a>");
 }
