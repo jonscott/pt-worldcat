@@ -693,7 +693,7 @@ if (str.indexOf("searcharg=") > -1)
 	else  {
 	wcqindex="";  }
 
-     if (/^[adtN]%3A/.test(sqf) || / [adtN]%3A/.test(sqf) || /\) and \(/.test(sqf)) { //--- advanced keyword search limits selected ? ---
+     if (/^[adtN]%3A/.test(sqf) || / [adtN]%3A/.test(sqf) || /\) and \(/.test(sqf) || /\) or \(/.test(sqf)) { //--- advanced keyword search limits selected ? ---
 	sqf = transmogrify(sqf);
      }
 
@@ -752,7 +752,7 @@ function readit2()  {
 		else { 
 		sfarg = sfarg; }
 }
-     if (/^[adtN]:/.test(sfarg) || / [adtN]:/.test(sfarg) || /\) and \(/.test(sfarg)) { //--- advanced keyword search limits selected ? ---
+     if (/^[adtN]:/.test(sfarg) || / [adtN]:/.test(sfarg) || /\) and \(/.test(sfarg) || /\) or \(/.test(sfarg)) { //--- advanced keyword search limits selected ? ---
 	sfarg = transmogrify(sfarg);
      }
 
