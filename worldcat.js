@@ -766,6 +766,13 @@ function readit2()  {
 	else { var sfindex = sqindex;
        }
      }
+	   if ((sfindex == "d") || (sfindex == "g"))  {   //--- Subject Search ----
+		if (sfarg.length > 49) {    //--- Subject is longer than III display can handle & has been truncated ---
+		   var subsfarg = (sfarg.lastIndexOf(" ")); //---Find Last White Space as WC chokes on incomplete words --
+		   sfarg = (sfarg.substr(0,subsfarg));  	   //---Truncate at last white space --
+            	}
+	   sfarg = sfarg.replace(/ ?-- ?/g," ");  //-- Squash Hyphens in subject search --
+	   }
 
      var wcindex="";
 
