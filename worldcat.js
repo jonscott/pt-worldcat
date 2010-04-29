@@ -1,4 +1,3 @@
-
 //  =============================================================================================================
 // ||	To include this passthrough script in your catalog, Edit the WWWOPTIONS entry for the button directly 	||
 // ||   to the left of the spot where you want the passthrough link to appear.					||
@@ -123,7 +122,8 @@ Summit_Img = "oasis.oregonstate.edu/screens/orbpass.png"; }
     else if (str.indexOf("library-catalog.reed.edu") > -1) {
  Summit_Img = "library-catalog.reed.edu/screens/searchsum.gif"; }
     else if (str.indexOf("cals.evergreen.edu") > -1) {
- Summit_Img = "cals.evergreen.edu/screens/repinsum.gif"; }
+ Summit_Img = "cals.evergreen.edu/screens/repinsum.gif"; 
+ summitscope="&scope=1";}
     else if (str.indexOf("deborah.spu.edu") > -1) {
  Summit_Img = "deborah.spu.edu/screens/search_summit.gif"; }
     else if (str.indexOf("lib.sou.edu") > -1) {
@@ -1189,6 +1189,8 @@ if ((((d1) || (d2)) && (wclimit)) && (!wclang) || (((str.indexOf("&Da=") > -1 ||
 }
 	if (str.indexOf("library.seattleu.edu") > -1) {		//-- Seattle U does not use an image.
 		document.write ("<a href='javascript:readit2();' id='suSummitbtn'>Repeat Search in Summit</a>") }
-    else  {		
+else  {   
+      if (!document.getElementById('SummitBtn')) {
 document.write ("<a href='javascript:readit2();'><img src='" + Protoc + Summit_Img + "' border=0 id=SummitBtn></a>");
+   }
 }
