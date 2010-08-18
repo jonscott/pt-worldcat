@@ -555,6 +555,7 @@ function replace(string,title,by) {
         newstr += replace(string.substring(i+txtLength,strLength),title,by);
     return newstr;
 }
+    title = title.replace("[electronic resource]", "");  //---Remove [electronic resource], (WSU Cataloging) WC chokes --
     title = replace(title,unescape('%C0'),'A');
     title = replace(title,unescape('%C1'),'A');
     title = replace(title,unescape('%C2'),'A');
