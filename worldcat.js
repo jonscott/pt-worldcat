@@ -112,7 +112,7 @@ Summit_Img = "oasis.oregonstate.edu/screens/orbpass.png"; }
     else if (str.indexOf("shoen.iii.com") > -1) {
  Summit_Img = "shoen.iii.com/screens/orbis1.gif"; }
     else if (str.indexOf("catalogs.ohsu.edu") > -1) {
- Summit_Img = "catalogs.ohsu.edu/screens/orbis.gif"; }
+ Summit_Img = "catalogs.ohsu.edu/screens/orbis.gif";  url = "http://ohsulibrary.worldcat.org/search?q="; }
     else if ((str.indexOf("140.211.132.11") > -1) ||  (str.indexOf("hedgehog.oit.edu")) > -1) {
  Summit_Img = "140.211.132.11/screens/orbis2.gif"; }
     else if (str.indexOf("abigail.lib.pacificu.edu") > -1) {
@@ -248,10 +248,23 @@ function dialogClick(event)
      SendMe =  value;
   }
  if (SendMe == "Find Record") {
-			alert('Switching to public view in order to get your record. \n Click the "Search Summit" button on the next screen.');
-                          var pubstr = location.href;
-                              pubstr = pubstr.replace("frameset&FF","public&FF");
-                                   location.href=pubstr;
+	var td = document.getElementsByTagName('TD');	// we have to iterate through every TD 
+	var numberOrTitle = "";
+    	for(i = 0; i < td.length; i++) {	    	// for every TD in the document
+		if ( td[i].innerHTML.indexOf("BIB UTIL #") > -1 && !(td[i+1].innerHTML.indexOf("<") > -1)) {
+			numberOrTitle = "no:" + td[i+1].innerHTML;
+		}
+		else if ( td[i].innerHTML.indexOf("TITLE") > -1 && !(td[i+1].innerHTML.indexOf("<") > -1)) {
+			numberOrTitle += " ti:" + td[i+1].innerHTML;
+		}
+		else if (td[i].innerHTML.indexOf("AUTHOR") > -1 && !(td[i+1].innerHTML.indexOf("<") > -1)) {
+			numberOrTitle += " au:" + td[i+1].innerHTML;
+		}
+	}
+	if ( numberOrTitle == "") {
+		numberOrTitle = prompt('A unique attribute cannot be found for this item.\nPlease enter the query you would like to send to summit.worldcat.org :');
+	}
+	location.href = (url + numberOrTitle);
   }
 else if (SendMe == "Send Search") {
 	location.href= (url2go2)
@@ -556,6 +569,11 @@ function replace(string,title,by) {
     return newstr;
 }
     title = title.replace("[electronic resource]", "");  //---Remove [electronic resource], (WSU Cataloging) WC chokes --
+    title = title.replace("[video recording]", "");  
+    title = title.replace("[videorecording]", ""); 
+    title = title.replace("[microform]", "");  
+    title = title.replace("[", "");  //---Remove al bracketed data 
+    title = title.replace("]", "");  
     title = replace(title,unescape('%C0'),'A');
     title = replace(title,unescape('%C1'),'A');
     title = replace(title,unescape('%C2'),'A');
